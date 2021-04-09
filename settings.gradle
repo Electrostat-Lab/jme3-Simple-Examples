@@ -1,0 +1,5 @@
+include ':helloandroidui'
+include ':hellofragmentharness'
+include ':helloandroidharness'
+include ':hellojmesurfaceview'
+rootProject.name = "jme3-Simple-Examples"
