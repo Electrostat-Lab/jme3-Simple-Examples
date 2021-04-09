@@ -15,6 +15,7 @@
         android:id="@+id/webView"
         android:layout_width="320dp"
         android:layout_height="320dp"
+        android:visibility="invisible"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         />
@@ -24,6 +25,7 @@
         android:layout_height="120dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
+        android:visibility="invisible"
         android:src="@drawable/ic_android_black_24dp"
         app:tint="@color/teal_700" />
 
