@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.scrappers.hellofragmentharness"
+        applicationId "com.jme3.hellofragmentharness"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
@@ -40,8 +40,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     /*add the JMonkeyEngine Dependencies*/
-    implementation "org.jmonkeyengine:jme3-core:3.4.0-alpha7"
-    implementation "org.jmonkeyengine:jme3-effects:3.4.0-alpha7"
-    implementation "org.jmonkeyengine:jme3-android-native:3.4.0-alpha7"
-    implementation "org.jmonkeyengine:jme3-lwjgl:3.4.0-alpha7"
+    implementation "org.jmonkeyengine:jme3-core:3.4.0-beta1"
+    implementation "org.jmonkeyengine:jme3-effects:3.4.0-beta1"
+    implementation "org.jmonkeyengine:jme3-android-native:3.4.0-beta1"
+    implementation "org.jmonkeyengine:jme3-lwjgl:3.4.0-beta1"
 }

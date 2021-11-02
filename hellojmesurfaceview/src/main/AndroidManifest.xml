@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.scrappers.hellojmesurfaceview">
+    package="com.jme3.hellojmesurfaceview">
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:isGame="true"
         >
-        <activity android:name=".MainActivity"
+        <activity android:name="com.jme3.hellojmesurfaceview.MainActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

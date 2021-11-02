@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.scrappers.helloandroidui"
+        applicationId "com.jme3.helloandroidui"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1

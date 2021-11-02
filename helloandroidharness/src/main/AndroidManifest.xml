@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.scrappers.helloandroidharness">
+    package="com.jme3.helloandroidharness">
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,7 @@
         android:isGame="true"
         android:extractNativeLibs="true"
         tools:targetApi="m">
-        <activity android:name=".MainActivity"
+        <activity android:name="com.jme3.helloandroidharness.MainActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
