@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements OnRendererComplet
     }
 
     @Override
-    public void onDestroyView() {
+    public void onDestroy() {
         super.onDestroyView();
         jmeSurfaceView.getLegacyApplication().stop(!jmeSurfaceView.isGLThreadPaused());
     }
