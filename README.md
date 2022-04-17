@@ -54,3 +54,7 @@ https://developer.android.com/studio/publish/app-signing
 ## For more about testing your application : 
 https://developer.android.com/studio/test
 
+## The anatomy of jMonkeyEngine game application : 
+| `SimpleApplication` | `Rendering Component` | `Android Activity` | `AppStates and Controls` |
+|-------|------|-------|-------|
+| Initialize and update a jme game | Renders a `SimpleApplication` using a surface view (gl component) and passes it to android activity | The entry point and life cycle manager of android application, it holds the surface view | your game logic is distributed among these components and you can register them inside `SimpleApplication` class |
