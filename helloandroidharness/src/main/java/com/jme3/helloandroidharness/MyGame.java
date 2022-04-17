@@ -12,13 +12,13 @@ import com.jme3.scene.debug.WireSphere;
  *
  * @author pavl_g
  */
-public class MyGame extends SimpleApplication {
+public final class MyGame extends SimpleApplication {
     @Override
     public void simpleInitApp() {
-        WireSphere wireSphere=new WireSphere(50);
-        Geometry geometry = new Geometry("wireSphere", wireSphere);
+        final WireSphere wireSphere = new WireSphere(50);
+        final Geometry geometry = new Geometry("wireSphere", wireSphere);
         geometry.setLocalScale(0.05f);
-        Material material = new Material(assetManager.loadAsset(new AssetKey<>("Common/MatDefs/Misc/Unshaded.j3md")));
+        final Material material = new Material(assetManager.loadAsset(new AssetKey<>("Common/MatDefs/Misc/Unshaded.j3md")));
         material.setColor("Color", ColorRGBA.randomColor().mult(2f));
         geometry.setMaterial(material);
         rootNode.attachChild(geometry);

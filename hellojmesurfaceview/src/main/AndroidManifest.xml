@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.jme3.hellojmesurfaceview">
 
     <application
@@ -9,8 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:extractNativeLibs="true"
         android:isGame="true"
-        >
+        tools:targetApi="m">
         <activity android:name="com.jme3.hellojmesurfaceview.MainActivity"
             android:screenOrientation="landscape">
             <intent-filter>

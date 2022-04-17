@@ -17,15 +17,16 @@ import com.jme3.scene.shape.Box;
  * <li>Set that instance using #{@link com.jme3.app.jmeSurfaceView.JmeSurfaceView#setLegacyApplication(LegacyApplication)}</li>
  * <li>Start the game using #{@link com.jme3.app.jmeSurfaceView.JmeSurfaceView#startRenderer(int)}</li>
  * </ol>
+ *
  * @author pavl_g
  */
-public class MyGame extends SimpleApplication {
+public final class MyGame extends SimpleApplication {
     @Override
     public void simpleInitApp() {
-        Box box=new Box(50,50,10);
-        Geometry geometry = new Geometry("box", box);
+        final Box box = new Box(50, 50, 10);
+        final Geometry geometry = new Geometry("box", box);
         geometry.setLocalScale(0.05f);
-        Material material = new Material(assetManager.loadAsset(new AssetKey<>("Common/MatDefs/Misc/Unshaded.j3md")));
+        final Material material = new Material(assetManager.loadAsset(new AssetKey<>("Common/MatDefs/Misc/Unshaded.j3md")));
         material.setColor("Color", ColorRGBA.randomColor().mult(2f));
         geometry.setMaterial(material);
         rootNode.attachChild(geometry);

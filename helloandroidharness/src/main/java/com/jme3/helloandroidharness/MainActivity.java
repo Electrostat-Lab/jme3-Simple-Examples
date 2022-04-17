@@ -1,6 +1,7 @@
 package com.jme3.helloandroidharness;
 
 import com.jme3.app.AndroidHarness;
+
 import java.util.Objects;
 
 /**
@@ -18,8 +19,8 @@ import java.util.Objects;
  *
  * @author pavl_g
  */
-public class MainActivity extends AndroidHarness {
-    public MainActivity(){
+public final class MainActivity extends AndroidHarness {
+    public MainActivity() {
         /*get the jme class dir*/
         appClass = Objects.requireNonNull(MyGame.class.getName());
     }

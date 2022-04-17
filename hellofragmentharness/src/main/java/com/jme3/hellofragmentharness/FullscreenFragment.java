@@ -2,7 +2,9 @@ package com.jme3.hellofragmentharness;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+
 import com.jme3.app.AndroidHarnessFragment;
+
 import java.util.Objects;
 
 /**
@@ -18,8 +20,8 @@ import java.util.Objects;
  *
  * @author pavl_g
  */
-public class FullscreenFragment extends AndroidHarnessFragment {
-    public FullscreenFragment(){
+public final class FullscreenFragment extends AndroidHarnessFragment {
+    public FullscreenFragment() {
         /*get the jme class dir*/
         appClass = Objects.requireNonNull(MyGame.class).getName();
     }
