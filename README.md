@@ -4,11 +4,8 @@ Modular jMonkeyEngine Android Simple Gradle Examples.
 ## In this repository, you will find 4 modules : 
 
 | helloandroidharness | hellofragmentharness | hellojmesrufaceview | helloandroidui |
-|-------|------|-------|
-| Tests jme game on an android activity `AndroidHarness` | 
-Tests jme game on an android fragment `AndroidFragmentHarness` | 
-Tests jme game on a custom android view `JmeSurfaceView` | 
-Tests jme game on a surface view with some android ui usages showing best practice |
+|-------|------|-------|-------|
+| Tests jme game on an android activity `AndroidHarness` | Tests jme game on an android fragment `AndroidFragmentHarness` | Tests jme game on a custom android view `JmeSurfaceView` | Tests jme game on a surface view with some android ui usages showing best practice |
 
 ## Quick start guide using android studio IDE : 
 1) Clone the repository.
