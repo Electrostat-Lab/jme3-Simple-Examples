@@ -17,3 +17,40 @@ guide for more on devdloper options : https://developer.android.com/studio/debug
 5) When opening android studio, you will find these modules, select a module and run : 
 ![image](https://user-images.githubusercontent.com/60224159/163730853-42410b2d-939b-45d3-8a6b-3632d90bc54e.png)
 6) Congrats ! Now you can play around with android and jMonkeyEngine apis !
+
+## Quick start guide using command line gradle and adb : 
+1) Download the repository on your local disk.
+2) Navigate to the root directory.
+3) To start building an example use the following command : 
+> For windows 
+```bash
+gradlew :helloandroidharness
+```
+> For linux/mac
+```bash
+./gradlew :helloandroidharness
+```
+4) To start dexing and build a debug apk for an example, use the following command : 
+> For windows 
+```bash
+gradlew :hellofragmentharness:assemble
+```
+> For linux/mac
+```bash
+./gradlew :hellofragmentharness:assemble
+```
+5) To run directly on connected devices : 
+> For windows 
+```bash 
+gradlew :hellofragmentharness:installDebug
+```
+> For linux/mac
+```bash
+./gradlew :hellofragmentharness:installDebug
+```
+6) To dex a signed apk for google play, check this tutorial : 
+https://developer.android.com/studio/publish/app-signing
+
+## For more about testing your application : 
+https://developer.android.com/studio/test
+
