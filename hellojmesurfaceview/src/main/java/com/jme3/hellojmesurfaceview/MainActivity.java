@@ -22,7 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * An Android Example that demonstrates : How to use a simple game#{@link MyGame}
  * on #{@link com.jme3.app.jmeSurfaceView.JmeSurfaceView} inside an #{@link androidx.appcompat.app.AppCompatActivity}.
  * <br>
- * <b>Note : use #{@link AppCompatActivity#setRequestedOrientation(int)} & #{@link ActivityInfo#SCREEN_ORIENTATION_LANDSCAPE} for LandScape mode or specify that under the <activity> activity tag xml.</b>
+ * <b>Note : use #{@link AppCompatActivity#setRequestedOrientation(int)} and #{@link ActivityInfo#SCREEN_ORIENTATION_LANDSCAPE} for LandScape mode or specify that under the <activity> activity tag xml.</b>
  *
  * @author pavl_g
  */
@@ -39,7 +39,7 @@ public final class MainActivity extends AppCompatActivity implements OnRendererC
         jmeSurfaceView.setOnExceptionThrown(this);
         jmeSurfaceView.setOnRendererCompleted(this);
         /*start the game*/
-        jmeSurfaceView.startRenderer(JmeSurfaceView.NO_DELAY);
+        jmeSurfaceView.startRenderer(0);
     }
 
     /**
@@ -72,7 +72,7 @@ public final class MainActivity extends AppCompatActivity implements OnRendererC
     public void onWindowFocusChanged(boolean hasFocus) {
         /*get the view from the current activity*/
         final View decorView = MainActivity.this.getWindow().getDecorView();
-        /*hide navigation bar, apply fullscreen, hide status bar, immersive sticky to disable the system bars(nav & status) from showing up when user wipes the screen*/
+        /*hide navigation bar, apply fullscreen, hide status bar, immersive sticky to disable the system bars(nav and status) from showing up when user wipes the screen*/
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
                 View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
                 View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
