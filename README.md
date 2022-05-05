@@ -1,17 +1,18 @@
 # jme3-Simple-Examples
 Module based jMonkeyEngine Android Simple Gradle Examples.
 
-## In this repository, you will find 4 modules : 
+## In this repository, you will find 5 modules : 
 
 ```gradle
 include ':helloandroidui'
 include ':hellofragmentharness'
 include ':helloandroidharness'
 include ':hellojmesurfaceview'
+include ':hellokotlin'
 ```
-| helloandroidharness | hellofragmentharness | hellojmesrufaceview | helloandroidui |
+| helloandroidharness | hellofragmentharness | hellojmesrufaceview | helloandroidui | hellokotlin
 |-------|------|-------|-------|
-| Tests jme game on an android activity `AndroidHarness` | Tests jme game on an android fragment `AndroidFragmentHarness` | Tests jme game on a custom android view `JmeSurfaceView` | Tests jme game on a surface view with some android ui usages showing best practice |
+| Tests jme game on an android activity `AndroidHarness` | Tests jme game on an android fragment `AndroidFragmentHarness` | Tests jme game on a custom android view `JmeSurfaceView` | Tests jme game on a surface view with some android ui usages showing best practice | Tests jme game using koltin android plugin |
 
 ## Quick start guide using android studio IDE : 
 1) Clone the repository.
