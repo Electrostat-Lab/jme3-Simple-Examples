@@ -1,5 +1,12 @@
 package com.jme3.helloandroidharness;
 
+import android.content.pm.ActivityInfo;
+import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.view.Menu;
+
+import androidx.annotation.Nullable;
+
 import com.jme3.app.AndroidHarness;
 
 import java.util.Objects;
@@ -23,5 +30,11 @@ public final class MainActivity extends AndroidHarness {
     public MainActivity() {
         /*get the jme class dir*/
         appClass = Objects.requireNonNull(MyGame.class.getName());
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.err.println("OnDestroy invoked");
     }
 }
