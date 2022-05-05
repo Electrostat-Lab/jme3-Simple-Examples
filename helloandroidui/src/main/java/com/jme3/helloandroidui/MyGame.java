@@ -14,12 +14,13 @@ import com.jme3.scene.shape.Sphere;
  * To use it inside Android :
  * <ol>
  * <li>Create an instance of it inside the #{@link MainActivity}</li>
- * <li>Set that instance using #{@link com.jme3.app.jmeSurfaceView.JmeSurfaceView#setLegacyApplication(LegacyApplication)}</li>
- * <li>Start the game using #{@link com.jme3.app.jmeSurfaceView.JmeSurfaceView#startRenderer(int)}</li>
+ * <li>Set that instance using #{@link com.jme3.view.surfaceview.JmeSurfaceView#setLegacyApplication(LegacyApplication)}</li>
+ * <li>Start the game using #{@link com.jme3.view.surfaceview.JmeSurfaceView#startRenderer(int)}</li>
  * </ol>
  *
  * @author pavl_g
  */
+
 public final class MyGame extends SimpleApplication {
     @Override
     public void simpleInitApp() {

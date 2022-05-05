@@ -1,26 +1,24 @@
-package com.jme3.hellojmesurfaceview;
+ package com.jme3.hellojmesurfaceview;
 
-import android.content.pm.ActivityInfo;
-import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
+ import android.content.pm.ActivityInfo;
+ import android.graphics.Rect;
+ import android.os.Bundle;
+ import android.view.TouchDelegate;
+ import android.view.View;
+ import android.widget.Toast;
+ import androidx.appcompat.app.AppCompatActivity;
 
-import com.jme3.app.LegacyApplication;
-import com.jme3.app.jmeSurfaceView.JmeSurfaceView;
-import com.jme3.app.jmeSurfaceView.OnExceptionThrown;
-import com.jme3.app.jmeSurfaceView.OnRendererCompleted;
-import com.jme3.system.AppSettings;
+ import com.jme3.app.LegacyApplication;
+ import com.jme3.system.AppSettings;
+ import com.jme3.view.surfaceview.JmeSurfaceView;
+ import com.jme3.view.surfaceview.OnExceptionThrown;
+ import com.jme3.view.surfaceview.OnRendererCompleted;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-/**
+ /**
  * <b>NB: Please Open this example <u>root module</u> using Android Studio; because android build scripts are different from java builds.</b>
  * <br/>
  * An Android Example that demonstrates : How to use a simple game#{@link MyGame}
- * on #{@link com.jme3.app.jmeSurfaceView.JmeSurfaceView} inside an #{@link androidx.appcompat.app.AppCompatActivity}.
+ * on #{@link com.jme3.view.surfaceview.JmeSurfaceView} inside an #{@link androidx.appcompat.app.AppCompatActivity}.
  * <br>
  * <b>Note : use #{@link AppCompatActivity#setRequestedOrientation(int)} and #{@link ActivityInfo#SCREEN_ORIENTATION_LANDSCAPE} for LandScape mode or specify that under the <activity> activity tag xml.</b>
  *
@@ -31,15 +29,15 @@ public final class MainActivity extends AppCompatActivity implements OnRendererC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         /*define the android view with it's id from xml*/
         final JmeSurfaceView jmeSurfaceView = findViewById(R.id.jmeSurfaceView);
+        jmeSurfaceView.setDestructionPolicy(JmeSurfaceView.DestructionPolicy.KEEP_WHEN_FINISH);
         /*set the jme game*/
         jmeSurfaceView.setLegacyApplication(new MyGame());
         jmeSurfaceView.setOnExceptionThrown(this);
         jmeSurfaceView.setOnRendererCompleted(this);
         /*start the game*/
-        jmeSurfaceView.startRenderer(0);
+        jmeSurfaceView.startRenderer(500);
     }
 
     /**
@@ -51,7 +49,6 @@ public final class MainActivity extends AppCompatActivity implements OnRendererC
     public void onExceptionThrown(Throwable e) {
         Toast.makeText(MainActivity.this, "User's Delay Finished w/ exception : " + e.getMessage(), Toast.LENGTH_SHORT).show();
     }
-
     /**
      * Fired when the user delay in ms is up #{@link JmeSurfaceView#startRenderer(int)}.
      *

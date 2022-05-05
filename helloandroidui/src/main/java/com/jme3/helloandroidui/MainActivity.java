@@ -8,15 +8,15 @@ import android.webkit.WebView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.jme3.app.LegacyApplication;
-import com.jme3.app.jmeSurfaceView.JmeSurfaceView;
-import com.jme3.app.jmeSurfaceView.OnExceptionThrown;
-import com.jme3.app.jmeSurfaceView.OnRendererCompleted;
-import com.jme3.system.AppSettings;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
+
+import com.jme3.app.LegacyApplication;
+import com.jme3.system.AppSettings;
+import com.jme3.view.surfaceview.JmeSurfaceView;
+import com.jme3.view.surfaceview.OnExceptionThrown;
+import com.jme3.view.surfaceview.OnRendererCompleted;
 
 import static android.widget.Toast.LENGTH_LONG;
 
@@ -34,6 +34,7 @@ import static android.widget.Toast.LENGTH_LONG;
  */
 public final class MainActivity extends AppCompatActivity implements OnRendererCompleted, OnExceptionThrown {
 
+    private static boolean isRenderingCompleted;
     private JmeSurfaceView jmeSurfaceView;
     private CardView splashScreen;
 
@@ -45,17 +46,24 @@ public final class MainActivity extends AppCompatActivity implements OnRendererC
 
         /*define the android view with it's id from xml*/
         jmeSurfaceView = findViewById(R.id.jmeSurfaceView);
+        jmeSurfaceView.setDestructionPolicy(JmeSurfaceView.DestructionPolicy.KEEP_WHEN_FINISH);
+
         /*display a splash screen*/
-        splashScreen = new CardView(MainActivity.this);
-        splashScreen.setLayoutParams(new RelativeLayout.LayoutParams(jmeSurfaceView.getLayoutParams().width, jmeSurfaceView.getLayoutParams().height));
-        splashScreen.setBackground(ContextCompat.getDrawable(this, R.drawable.power2));
-        jmeSurfaceView.addView(splashScreen);
+        if (!isRenderingCompleted) {
+            splashScreen = new CardView(MainActivity.this);
+            splashScreen.setLayoutParams(new RelativeLayout.LayoutParams(jmeSurfaceView.getLayoutParams().width, jmeSurfaceView.getLayoutParams().height));
+            splashScreen.setBackground(ContextCompat.getDrawable(this, R.drawable.power2));
+            jmeSurfaceView.addView(splashScreen);
+        } else {
+            findViewById(R.id.webView).setVisibility(View.VISIBLE);
+            findViewById(R.id.image).setVisibility(View.VISIBLE);
+        }
+
         /*set the jme game*/
         jmeSurfaceView.setLegacyApplication(new MyGame());
         jmeSurfaceView.setOnExceptionThrown(this);
         jmeSurfaceView.setOnRendererCompleted(this);
-        /*start the game, with delay for the splashScreen*/
-        jmeSurfaceView.startRenderer(300);
+        jmeSurfaceView.startRenderer(500);
 
         /*Handle other UI-Components parts*/
         final WebView webView = findViewById(R.id.webView);
@@ -98,6 +106,7 @@ public final class MainActivity extends AppCompatActivity implements OnRendererC
             /*dismiss the splash screen at the send of the animation*/
             jmeSurfaceView.removeView(splashScreen);
         }).start();
+        isRenderingCompleted = true;
     }
 
     /**
