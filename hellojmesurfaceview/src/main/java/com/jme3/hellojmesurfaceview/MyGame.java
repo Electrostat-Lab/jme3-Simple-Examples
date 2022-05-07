@@ -1,5 +1,8 @@
 package com.jme3.hellojmesurfaceview;
 
+import android.app.Application;
+import android.widget.Toast;
+
 import com.jme3.app.LegacyApplication;
 import com.jme3.app.SimpleApplication;
 import com.jme3.asset.AssetKey;
@@ -9,6 +12,12 @@ import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.shape.Sphere;
+import com.simsilica.lemur.Button;
+import com.simsilica.lemur.Command;
+import com.simsilica.lemur.Container;
+import com.simsilica.lemur.GuiGlobals;
+import com.simsilica.lemur.Label;
+import com.simsilica.lemur.style.BaseStyles;
 
 /**
  * <b>Your Actual Jme Game class.</b>
@@ -26,6 +35,7 @@ public final class MyGame extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
+        flyCam.setEnabled(false);
         final Sphere mySphere = new Sphere(10, 50, 50);
         final Geometry geometry = new Geometry("ball", mySphere);
         geometry.setLocalScale(0.05f);
