@@ -4,3 +4,5 @@ include ':helloandroidharness'
 include ':hellojmesurfaceview'
 rootProject.name = "jme3-Simple-Examples"
 include ':hellokotlin'
+include ':hellolemur'
+include ':hellominie'
